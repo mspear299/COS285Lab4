@@ -1,3 +1,2 @@
 # COS285Lab4
-
-Kareem
+Kareem Niare
