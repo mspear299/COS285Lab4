@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 
 /**Demonstrate the binary tree and its methods
- * @author Abby Pitcairn, Marcus Spear
+ * @author Abby Pitcairn, Marcus Spear, Kareem Niare
  * @version October 21, 2025
  */
 public class Lab4 {
@@ -24,6 +24,10 @@ public class Lab4 {
         
         //print tree by each node encountered
         tree.breadthFirstSearch();
+
+        // Test the search method
+        System.out.println("Search for 12: " + tree.find(12));
+        System.out.println("Search for 3: " + tree.find(3));
     }
 
     /**Create a List of Integers from a given filepath with data
