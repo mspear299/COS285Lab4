@@ -1,10 +1,10 @@
-package lab4;
+
 
 import java.util.*;
 
 /**Creates a MyBinaryTree object that stores unsorted nodes in a binary tree.
  * @param <E> the data type of the elements in the tree
- * @author Abby Pitcairn, Kareem Niare, & Marcus Spear
+ * @author Abby Pitcairn, Marcus Spear
  * @version October 21, 2025
  */
 public class MyBinaryTree<E extends Comparable<E>> {
@@ -58,34 +58,26 @@ public class MyBinaryTree<E extends Comparable<E>> {
             insert(element);
         }
     }
-
+    
     /**
-     * Searches the tree for the given target value.
-     * @param target - the value to search for in the tree
-     * @return true if the target is found, false otherwise
+     * Function to print each node in the order they're encountered in by level
+     * @author Marcus Spear
      */
-    public boolean find(E target) {
-    	return find(root, target);
+    public void breadthFirstSearch(){
+        if(root==null){
+            return;
+        }
+        Queue<Node<E>>queue=new ArrayDeque<Node<E>>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            Node<E> node=queue.poll();
+            System.out.println(node.data +" ");
+            if(node.left != null){
+                queue.add(node.left);
+            }
+            if(node.right != null){
+                queue.add(node.right);
+            }
+        }
     }
-
-    /**
-     * Recursive helper for find.
-     * @param localRoot - the current Node being checked
-     * @param target - the value to search for in the tree
-     * @return true if the target is found, false otherwise
-     */
-	private boolean find(Node<E> localRoot, E target) {
-		if (localRoot == null)
-			return false;
-		
-		// Compare the target with the data field at the root.
-		int compResult = target.compareTo(localRoot.data);
-		
-		if (compResult == 0)
-			return true;
-		else if (compResult < 0)
-			return find(localRoot.left, target);
-		else
-			return find(localRoot.right, target);
-	}
 }

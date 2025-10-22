@@ -1,11 +1,10 @@
-package lab4;
 
 import java.util.*;
 import java.io.*;
 
 /**Demonstrate the binary tree and its methods
- * @author Abby Pitcairn
- * @version October 18, 2025
+ * @author Abby Pitcairn, Marcus Spear
+ * @version October 21, 2025
  */
 public class Lab4 {
     
@@ -22,7 +21,9 @@ public class Lab4 {
         
         // Add the data to the tree.
         tree.buildTree(data);
-
+        
+        //print tree by each node encountered
+        tree.breadthFirstSearch();
     }
 
     /**Create a List of Integers from a given filepath with data
