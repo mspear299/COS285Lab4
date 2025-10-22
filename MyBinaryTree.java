@@ -2,7 +2,7 @@ import java.util.*;
 
 /**Creates a MyBinaryTree object that stores unsorted nodes in a binary tree.
  * @param <E> the data type of the elements in the tree
- * @author Abby Pitcairn, Marcus Spear
+ * @author Abby Pitcairn, Marcus Spear, Kareem Niare
  * @version October 21, 2025
  */
 public class MyBinaryTree<E extends Comparable<E>> {
@@ -109,5 +109,6 @@ public class MyBinaryTree<E extends Comparable<E>> {
 			return find(localRoot.right, target);
 	}
 }
+
 
 
